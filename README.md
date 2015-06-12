@@ -26,7 +26,9 @@ Live status board(LSB) is a component that displays your live updates in a nice 
     
 5. Follow given Examples.html to follow fully working boards.
 
+## How to run Examples?
 
+Download given Examples.html, js and css folders. Directly double-click Examples.html file or drag it into any browser. Thats it, you can see the sample live boards.
 
 ## Screen captures
 ![GitHub Logo](/images/Example-1-Screen-1.PNG)
