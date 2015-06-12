@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MJ LIVE STATUS BOARDS - Examples</title>
+<link rel="stylesheet" href="css/mj-live-status-boards-styles.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<style>
+.redColor{color:#FF6666;}
+.greenColor{color:#33CC33;}
+</style>
+</head>
+
+<body>
+<div class="live-board">
+<div class="live-score" x-live-details="caseCounterBoard1">999,999,999
+</div>
+<div class="live-details">Pending Cases</div>
+</div>
+
+<div class="live-board">
+<!-- x-live-details is the attr to identify unique msg board element and will be helpful when you have multiple boards -->
+<div class="live-msg" x-live-details="caseStatusBoard1">Closed</div>
+<div class="live-details">Case# RI9094545999</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/mj-live-status-boards.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+setInterval(function(){
+UpdateLiveMsg();
+UpdateLiveCounter();},4000);
+});
+
+function UpdateLiveMsg()
+{
+   // Make ajax call or custom logic to prepare live feed...
+   // In this example, we are randomly updating msgs 
+  
+    var rndm=Math.floor((Math.random() * 100) + 1)%2;
+	if(rndm==0)  
+{   //Call mj-live-status-boards js library to update msgs
+	updateLiveStatusBoardMessage("caseStatusBoard1","Re-Opened","redColor");}
+    else
+{   //Call mj-live-status-boards js library to update msgs
+	updateLiveStatusBoardMessage("caseStatusBoard1","Resolved","greenColor");}
+	
+}
+
+function UpdateLiveCounter()
+{
+   // Make ajax call or custom logic to get live counter/score details...
+   // In this example, we are randomly updating scores 
+  
+    var rndm='9997'+String(Math.floor((Math.random() * 100000) + 1));
+	//Call mj-live-status-boards js library to update msgs
+	updateLiveStatusBoardScore("caseCounterBoard1",rndm);	
+}
+
+</script>
+
+</body>
+</html>
