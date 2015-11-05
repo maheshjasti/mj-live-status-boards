@@ -1,3 +1,6 @@
+//The MIT License (MIT)
+
+//Copyright (c) 2015 maheshjasti
 
 function updateLiveStatusBoardScore(xLiveDetailsAttrValue,score){
 	var liveMsgElement = $('div.live-score[x-live-details=' + xLiveDetailsAttrValue + "]");''
